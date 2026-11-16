@@ -1,0 +1,10 @@
+{
+  "name": "Switch 2 Price Tracker Chile",
+  "short_name": "Switch 2 Tracker",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1118",
+  "theme_color": "#101820",
+  "description": "Seguimiento de precios Nintendo Switch 2 en Chile",
+  "icons": []
+}

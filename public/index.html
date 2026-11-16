@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101820"><meta name="description" content="Seguimiento de precios Nintendo Switch 2 en Chile">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/styles.css">
+<title>Switch 2 Price Tracker Chile</title>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="mark">S2</div><div><b>SWITCH 2</b><span>PRICE TRACKER · CHILE</span></div></div>
+  <div class="status"><i></i><span id="statusText">Modo demostración</span></div>
+</header>
+<main>
+<section class="hero">
+ <div><p class="eyebrow">RADAR DE OFERTAS</p><h1>Encuentra el mejor<br><em>precio para tu Switch 2.</em></h1>
+ <p class="muted">Consolas, bundles, ediciones especiales y accesorios. Compara precios, vendedores y despacho a Chile.</p></div>
+ <div class="hero-icon">🎮</div>
+</section>
+<section class="stats">
+ <article><span>MEJOR PRECIO DETECTADO</span><strong id="bestPrice">—</strong><small id="bestStore">Esperando fuentes verificadas</small></article>
+ <article><span>OFERTAS BAJO $500.000</span><strong id="underTarget">—</strong><small>Umbral prioritario</small></article>
+ <article><span>PRODUCTOS SEGUIDOS</span><strong id="productCount">—</strong><small>Consolas + bundles + accesorios</small></article>
+</section>
+<section class="toolbar">
+ <div><p class="eyebrow">MONITOREO</p><h2>Ofertas encontradas</h2></div>
+ <div class="controls">
+  <select id="category"><option value="all">Todas las categorías</option><option value="console">Consolas</option><option value="bundle">Bundles</option><option value="edition">Ediciones especiales</option><option value="accessory">Accesorios</option></select>
+  <select id="sort"><option value="price">Menor precio</option><option value="discount">Mayor descuento</option><option value="recent">Más recientes</option></select>
+ </div>
+</section>
+<div class="notice" id="demoNotice"><b>Vista de demostración.</b> Los productos y precios de ejemplo no son ofertas reales ni están verificados. El rastreo real requiere configurar fuentes y desplegar el servidor.</div>
+<section id="offers" class="offers"></section>
+<section class="settings">
+ <div><p class="eyebrow">PERSONALIZA TU RADAR</p><h2>Alertas y preferencias</h2><p class="muted">El umbral prioritario está fijado en $500.000 CLP.</p></div>
+ <div class="setting-grid">
+  <label>Precio objetivo (CLP)<input id="target" type="number" value="500000" min="0" step="1000"></label>
+  <label>Frecuencia del servidor<select id="interval"><option value="5">Cada 5 minutos (objetivo)</option><option value="15">Cada 15 minutos</option><option value="60">Cada hora</option></select></label>
+  <label class="check"><input id="visual" type="checkbox" checked> Alertas visuales</label>
+  <label class="check"><input id="sound" type="checkbox" checked> Alertas sonoras</label>
+  <label class="check"><input id="push" type="checkbox"> Notificaciones del navegador</label>
+  <button id="save">Guardar preferencias</button>
+  <button id="test" class="secondary">Probar alerta</button>
+ </div>
+ <p class="footnote">El sonido requiere una interacción inicial con la página. Las notificaciones push requieren HTTPS, permiso del usuario y un servidor con Web Push configurado. La frecuencia indicada solo se activa al desplegar y configurar el backend.</p>
+</section>
+<section class="method">
+ <h2>Cómo validamos una oferta</h2>
+ <div class="method-grid"><div><b>01 · Producto exacto</b><p>Se distingue consola, bundle, edición y accesorio.</p></div><div><b>02 · Vendedor</b><p>Se identifica tienda directa o marketplace/tercero.</p></div><div><b>03 · Precio final</b><p>Se separan precio, despacho, cupones y condiciones de pago.</p></div><div><b>04 · Historial</b><p>Se registra el precio observado para detectar rebajas reales.</p></div></div>
+</section>
+<footer>SWITCH 2 PRICE TRACKER · CHILE <span>Proyecto inicial · No afiliado a Nintendo ni a las tiendas.</span></footer>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="/app.js"></script>
+</body></html>
